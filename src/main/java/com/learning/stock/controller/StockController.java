@@ -30,7 +30,7 @@ public class StockController {
     @RequestMapping(value = ("/{userName}") , method = RequestMethod.GET, produces = "application/json")
     public List<Stock> getStock(@PathVariable(value = "userName")String userName) throws Exception {
 
-        ResponseEntity<List<String>> quoteResponse = restTemplate.exchange("http://localhost:8300/rest/db/" + userName,
+        ResponseEntity<List<String>> quoteResponse = restTemplate.exchange("http://dbService/rest/db/" + userName,
                 HttpMethod.GET, null,
                 new ParameterizedTypeReference<List<String>>() {
                 });
